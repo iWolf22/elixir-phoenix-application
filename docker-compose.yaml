@@ -1,0 +1,17 @@
+name: elixir-phoenix-application
+
+services:
+    postgres:
+        image: postgres:17
+        container_name: elixir-phoenix-postgres
+        environment:
+            POSTGRES_USER: elixir-phoenix-user
+            POSTGRES_PASSWORD: elixir-phoenix-password
+            POSTGRES_DB: elixir-phoenix-database
+        ports:
+            - "5432:5432"
+        volumes:
+            - elixir_phoenix_postgres_data:/var/lib/postgresql/data
+
+volumes:
+    elixir_phoenix_postgres_data:
