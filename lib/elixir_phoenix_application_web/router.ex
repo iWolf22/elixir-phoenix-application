@@ -18,6 +18,9 @@ defmodule ElixirPhoenixApplicationWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/hello", HelloController, :index
+    get "/hello/:messenger", HelloController, :show
+    get "/bye", ByeController, :index
   end
 
   # Other scopes may use custom stacks.
